@@ -24,7 +24,10 @@
     
     scoreLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"field_score.png"]];
     timerLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"field_time.png"]];
-    
+
+    buttonBeep = [self setupAudioPlayerWithFile:@"ButtonTap" type:@"wav"];
+    secondBeep = [self setupAudioPlayerWithFile:@"SecondBeep" type:@"wav"];
+    backgroundMusic = [self setupAudioPlayerWithFile:@"HallOfTheMountainKing" type:@"mp3"];
     [self setupGame];
 }
 
@@ -38,6 +41,9 @@
     count++;
     
     scoreLabel.text = [NSString stringWithFormat:@"Score\n%i", count];
+    
+    // add this line
+    [buttonBeep play];
 }
 
 - (void)setupGame {
@@ -55,12 +61,18 @@
                                            selector:@selector(subtractTime)
                                            userInfo:nil
                                             repeats:YES];
+    
+    [backgroundMusic setVolume:0.3];
+    [backgroundMusic play];
 }
 
 - (void)subtractTime {
     // 1
     seconds--;
     timerLabel.text = [NSString stringWithFormat:@"Time: %i",seconds];
+    
+    // add this line
+    [secondBeep play];
     
     // 2
     if (seconds == 0) {
