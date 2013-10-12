@@ -81,4 +81,26 @@
     [self setupGame];
 }
 
+
+- (AVAudioPlayer *)setupAudioPlayerWithFile:(NSString *)file type:(NSString *)type
+{
+    // 1
+    NSString *path = [[NSBundle mainBundle] pathForResource:file ofType:type];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    // 2
+    NSError *error;
+    
+    // 3
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    // 4
+    if (!audioPlayer) {
+        NSLog(@"%@",[error description]);
+    }
+    
+    // 5
+    return audioPlayer;
+}
+
 @end
