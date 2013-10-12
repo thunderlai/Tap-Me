@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time: 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgA-It-MCg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="sp7-IP-nhI"/>
+                                    <constraint firstAttribute="height" constant="28" id="wIZ-06-jC2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122" translatesAutoresizingMaskIntoConstraints="NO" id="r80-B1-JMp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="Ox1-f7-a7J"/>
+                                    <constraint firstAttribute="height" constant="124" id="dpV-hT-hCa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvZ-t1-2Eh">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="JIk-bn-Lde"/>
+                                    <constraint firstAttribute="height" constant="120" id="Oem-Eu-OJK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Tap Me!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed" destination="2" eventType="touchUpInside" id="OfK-J4-zNd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.032178035061964039" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gvZ-t1-2Eh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="201" id="8tj-v3-jIb"/>
+                            <constraint firstAttribute="bottom" secondItem="r80-B1-JMp" secondAttribute="bottom" constant="6" id="LZh-T5-9xw"/>
+                            <constraint firstItem="gvZ-t1-2Eh" firstAttribute="centerX" secondItem="pgA-It-MCg" secondAttribute="centerX" type="default" id="RmJ-vL-Lh1"/>
+                            <constraint firstItem="gvZ-t1-2Eh" firstAttribute="centerX" secondItem="r80-B1-JMp" secondAttribute="centerX" type="default" id="pGc-mM-vQb"/>
+                            <constraint firstItem="pgA-It-MCg" firstAttribute="top" secondItem="3" secondAttribute="top" constant="50" id="sbW-cA-8Bf"/>
+                            <constraint firstItem="gvZ-t1-2Eh" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="xjh-0f-DZk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="r80-B1-JMp" id="xab-TZ-QEG"/>
+                        <outlet property="timerLabel" destination="pgA-It-MCg" id="TgG-ZT-EDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
